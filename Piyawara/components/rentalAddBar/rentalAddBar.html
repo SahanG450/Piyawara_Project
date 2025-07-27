@@ -1,0 +1,50 @@
+<div id="rental-banner">
+  <div class="rental-banner">
+    <!-- Decorative elements -->
+    <div class="decorative-circle"></div>
+    <div class="decorative-circle-2"></div>
+
+    <!-- Content Section -->
+    <div class="banner-content">
+      <div class="availability-tag">Available Items</div>
+
+      <h1 class="banner-title">Browser Quality Rental treasures</h1>
+
+      <p class="banner-description">
+        We have prepared special discounts for you on Rental products...
+      </p>
+
+      <button class="rent-button">
+        Rent Item
+        <span class="arrow-icon">→</span>
+      </button>
+    </div>
+
+    <!-- Image Section with rental items -->
+    <div class="banner-image">
+      <img src="#" />
+    </div>
+  </div>
+</div>
+
+<script>
+  // Add click functionality to the rent button
+  document.querySelector(".rent-button").addEventListener("click", function () {
+    console.log("Rent Item clicked");
+    // Add your rental page navigation logic here
+    // window.location.href = '/rental-page';
+  });
+
+  // CSS animation keyframes
+  const style = document.createElement("style");
+  style.textContent = `
+            @keyframes float {
+                0% { transform: translateY(0px) rotate(var(--initial-rotation, 0deg)); }
+                100% { transform: translateY(-10px) rotate(var(--initial-rotation, 0deg)); }
+            }
+        `;
+  document.head.appendChild(style);
+
+  // Start animations when page loads
+  window.addEventListener("load", animateItems);
+</script>
