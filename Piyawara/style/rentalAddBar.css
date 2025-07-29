@@ -15,6 +15,16 @@
   justify-content: space-between;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
+@media (max-width: 1024px) {
+  #rental-banner {
+    padding: -40%;
+    padding-right: 40%;
+  }
+}
+@media (max-width: 1024px) {
+  .rental-banner {
+  }
+}
 
 .banner-content {
   flex: 1;
