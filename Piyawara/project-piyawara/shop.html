@@ -1,17 +1,38 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Shop</title>
-    </head>
-    <body>
-        <div>
-            <heder-tag></heder-tag>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Shop</title>
+    <link rel="stylesheet" href="../style/shop.css" />
+    <script src="../components/header-components/heder-tag.js"></script>
+    <script src="../components/breadcrump/bread-tag.js"></script>
+    <script src="../components/sideFilterBar/filterbar-tag.js"></script>
+    <script src="../components/rentalAddBar/rentalAdd-tag.js"></script>
+    <script src="../components/item-countbar/itemcount-tag.js"></script>
+    <script src="../components/advItem/advitem-tag.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <heder-tag></heder-tag>
+      <bread-tag></bread-tag>
+      <div class="grid-container">
+        <filterbar-tag></filterbar-tag>
+        <rentadd-tag></rentadd-tag>
+        <itemcount-tag></itemcount-tag>
+        <div class="grid-container-sub">
+          <advitem-tag class="col1"></advitem-tag>
+          <advitem-tag class="col2"></advitem-tag>
+          <advitem-tag class="col3"></advitem-tag>
+          <advitem-tag class="col4"></advitem-tag>
+          <!-- <advitem-tag class="col5"></advitem-tag> -->
+          <advitem-tag class="col6"></advitem-tag>
+          <advitem-tag class="col7"></advitem-tag>
+          <advitem-tag class="col8"></advitem-tag>
+          <advitem-tag class="col9"></advitem-tag>
+          <!-- <advitem-tag class="col10"></advitem-tag> -->
         </div>
-        <div></div>
-        <div></div>
-
-
-        <script src="../components/header-components/heder-tag.js"></script>
-    </body>
+      </div>
+    </div>
+  </body>
 </html>
