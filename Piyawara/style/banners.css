@@ -1,0 +1,22 @@
+.web-banner{
+    display: flex;
+    height: 70%;
+    width: 70%;
+    margin-left: -70px;
+}
+
+.web-banner-shop{
+    display: flex;
+    height: auto;
+    margin-left: 0;
+    margin-top: 45px;
+    width: 100%;
+}
+
+.web-banner-rent{
+    display: flex;
+    height: auto;
+    margin-left: 0;
+    margin-top: 45px;
+    width: 100%;
+}
