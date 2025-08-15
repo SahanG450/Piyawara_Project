@@ -1,9 +1,11 @@
-// components/heder-tag.js
-
 class HederTag extends HTMLElement {
   connectedCallback() {
+    const cssPath = "/style/header.css";
+    const assetBase = "/assets";
+    const iconBase = `${assetBase}/header-icons`;
+
     this.innerHTML = `
-      <link rel="stylesheet" href="../style/header.css">
+      <link rel="stylesheet" href="${cssPath}">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Titan+One&display=swap" rel="stylesheet">
@@ -42,7 +44,7 @@ class HederTag extends HTMLElement {
           <span class="content5">
             <span style="font-family: 'Istok Web', sans-serif;">Buyer</span>
             <span>
-              <img src="../assets/header-icons/user-change.png">
+              <img src="${iconBase}/user-change.png">
             </span>
           </span>
         </div>
@@ -50,7 +52,7 @@ class HederTag extends HTMLElement {
         <div class="header3" style="width: 100%">
           <span class="content6">
             <span class="logo">
-              <img src="../assets/logo.jpg" class="logoimg">
+              <img src="${assetBase}/logo.jpg" class="logoimg">
             </span>
             <span class="logodesc">
               <span class="name">Piyawara</span>
@@ -59,18 +61,18 @@ class HederTag extends HTMLElement {
           </span>
           <span class="content7">
             <input type="text" placeholder="Search for product, category or sellers">
-            <img src="../assets/header-icons/search.png" class="imgSearch">
+            <img src="${iconBase}/search.png" class="imgSearch">
           </span>
           <span class="content8">
             <span>
-              <img src="../assets/header-icons/heart.png" class="heartImg">
-              <img src="../assets/header-icons/number1.png" class="numberImg">
+              <img src="${iconBase}/heart.png" class="heartImg">
+              <img src="${iconBase}/number1.png" class="numberImg">
             </span>
             <span>
-              <img src="../assets/header-icons/addToCart.png" class="addToCartImg">
-              <img src="../assets/header-icons/number1.png" class="numberImg">
+              <img src="${iconBase}/addToCart.png" class="addToCartImg">
+              <img src="${iconBase}/number1.png" class="numberImg">
             </span>
-            <span><img src="../assets/header-icons/SignIn.png" class="SignInImg"></span>
+            <span><img src="${iconBase}/SignIn.png" class="SignInImg"></span>
             <span class="signIn">Sign In</span>
           </span>
         </div>
@@ -81,13 +83,13 @@ class HederTag extends HTMLElement {
             <span>Shop</span>
             <span class="category">
               Categories
-              <img src="../assets/header-icons/dropdown-arrow.png">
+              <img src="${iconBase}/dropdown-arrow.png">
             </span>
             <span>Blog</span>
             <span>Contact</span>
           </span>
           <span class="mainNav2">
-            <span>Tranding Products <img src="../assets/header-icons/dropdown-arrow.png"></span>
+            <span>Tranding Products <img src="${iconBase}/dropdown-arrow.png"></span>
           </span>
         </div>
       </div>

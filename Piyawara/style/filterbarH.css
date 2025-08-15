@@ -1,0 +1,245 @@
+.filter-sidebar {
+  width: 300px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: "Arial", sans-serif;
+}
+
+/* Filter Section Styling with Horizontal Lines */
+.filter-section {
+  padding: 20px 0;
+  border-bottom: 1px solid #d1d5db;
+  margin-bottom: 0;
+}
+
+.filter-section:last-child {
+  border-bottom: none;
+}
+
+/* Title Styling */
+.filter-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 15px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+/* Price Filter Styling */
+.price-inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.price-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.price-separator {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.price-range-container {
+  margin-bottom: 15px;
+}
+
+.price-slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #e5e7eb;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.price-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+}
+
+.price-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-text {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.filter-button {
+  padding: 6px 16px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.filter-button:hover {
+  background-color: #2563eb;
+}
+
+/* Category List Styling */
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.category-item:last-child {
+  border-bottom: none;
+}
+
+.category-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #d1d5db;
+  border-radius: 3px;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.checkbox.checked {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.checkbox.checked::after {
+  content: "✓";
+  position: absolute;
+  top: -2px;
+  left: 1px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.category-label {
+  font-size: 14px;
+  color: #374151;
+}
+
+.expand-button {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: #6b7280;
+  transition: all 0.2s;
+}
+
+.expand-button:hover {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+/* Location Select Styling */
+.location-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  color: #374151;
+}
+
+.location-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Brand Filter Styling */
+.brand-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.brand-item:last-child {
+  border-bottom: none;
+}
+
+.brand-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.brand-count {
+  font-size: 12px;
+  color: #9ca3af;
+  background-color: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+/* Horizontal divider lines for major sections */
+.filter-sidebar::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  margin-bottom: 20px;
+  border-radius: 1px;
+}
+
+/* Additional styling for section separators */
+.filter-section + .filter-section {
+  position: relative;
+}
+
+.filter-section + .filter-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20px;
+  right: -20px;
+  height: 1px;
+  background-color: #d1d5db;
+}

@@ -2,13 +2,15 @@
 
 class filterTag extends HTMLElement {
   connectedCallback() {
+    const fileName = "../../style/sideFilterbar.css";
+
     this.innerHTML = `
-    <div id="filter-sidebar">
+
      <nav class="filter-sidebar">
-     <link rel="stylesheet" href="../style/sideFilterBar.css" />
+     <link rel="stylesheet" href="${fileName}" />
   <!-- Price Filter Section -->
   <div class="filter-section">
-    <h3 class="filter-title">Widget price filter</h3>
+    <h3 class="filter-title">Widget  price filter</h3>
 
     <div class="price-inputs">
       <input
@@ -188,7 +190,6 @@ class filterTag extends HTMLElement {
     </div>
   </div>
 </nav>
-</div>
 
 `;
   }

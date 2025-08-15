@@ -3,7 +3,7 @@
 class addTag extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-     <link rel="stylesheet" href="../style/add_template.css" />
+     <link rel="stylesheet" href="../../style/add_template.css" />
      <script src="./controler.js"></script>
 
     <div class="product-card">

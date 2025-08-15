@@ -4,7 +4,7 @@ class rentTag extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <script src="./controler.js"></script>
-     <link rel="stylesheet" href="../style/rentalAddBar.css" />
+     <link rel="stylesheet" href="../../style/rentalAddBar.css" />
      <div id="rental-banner">
 <div class="rental-banner">
   <!-- Decorative elements -->
@@ -28,9 +28,7 @@ class rentTag extends HTMLElement {
   </div>
 
   <!-- Image Section with rental items -->
-  <div class="banner-image">
-    <img src="#" />
-  </div>
+
 </div>
 </div>
 `;

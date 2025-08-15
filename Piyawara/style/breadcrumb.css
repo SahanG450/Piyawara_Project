@@ -1,16 +1,20 @@
+/* Base Styles (Mobile First) */
 .breadcrumb-container {
-  background-color: #f8f9fa;
-  padding: 15px 72px;
-  border-bottom: 1px solid #e9ecef;
+  padding: 15px 20px;
+  background-color: #fafafa;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .breadcrumb {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 36px 20px;
+  padding: 16px 0;
   display: flex;
   align-items: center;
   font-size: 14px;
+  white-space: nowrap; /* Prevent wrapping */
 }
 
 .breadcrumb a {
@@ -34,8 +38,20 @@
   font-weight: 500;
 }
 
-/* HIDE ON MOBILE */
-@media screen and (max-width: 768px) {
+/* Tablet and up (>= 769px) */
+@media screen and (min-width: 769px) {
+  .breadcrumb-container {
+    padding: 15px 72px;
+  }
+
+  .breadcrumb {
+    padding: 36px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Optional: Hide completely on very small screens (if needed) */
+@media screen and (max-width: 480px) {
   .breadcrumb-container {
     display: none;
   }

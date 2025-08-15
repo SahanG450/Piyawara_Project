@@ -3,7 +3,7 @@
 class countTag extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-     <link rel="stylesheet" href="../style/itemCount.css" />
+     <link rel="stylesheet" href="../../style/itemCount.css" />
      <script src="./controler.js"></script>
 <div id="results-header">
 <div class="results-header">

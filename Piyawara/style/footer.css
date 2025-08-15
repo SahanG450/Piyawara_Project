@@ -1,0 +1,148 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-content {
+  background: linear-gradient(
+    to right,
+    rgba(0, 238, 88, 0.17),
+    rgba(212, 253, 227, 1)
+  );
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  color: black;
+}
+
+.footer-account,
+.footer-company,
+.footer-category,
+.footer-contact,
+.footer-content > div {
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.footer-tittle {
+  margin-bottom: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  color: rgba(53, 40, 40, 1);
+}
+
+.footer-content > div > span {
+  margin-bottom: 7px;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2.4%;
+}
+
+.footer-logo > img {
+  width: 81px;
+  height: 81px;
+}
+
+.footer-content > span > div {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo-tittle {
+  color: rgba(23, 80, 48, 1);
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+}
+
+.footer-logo-sub-tittle {
+  font-family: "Istok Web", sans-serif;
+  font-size: 8px;
+}
+
+.footer-contact-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-contact-info > div {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.footer-contact-info > img {
+  height: 22px;
+  width: 22px;
+}
+
+.footer-bottom {
+  background-color: rgba(36, 172, 4, 1);
+  display: flex;
+  height: 5vh;
+  justify-content: space-between;
+}
+
+.footer-bottom > div > span > img {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  margin-top: -3px;
+}
+
+.footer-bottom > div {
+  margin-top: 10px;
+  margin-left: 40px;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  margin-right: 40px;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-content > div {
+    width: 90%;
+    align-items: center;
+  }
+
+  .footer-logo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-contact-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .footer-bottom > div {
+    margin: 5px 0;
+  }
+}

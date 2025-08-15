@@ -3,18 +3,16 @@
     Ubuntu, Cantarell, sans-serif;
   background-color: #ffffff;
   padding: 20px;
-  padding-right: 8%;
 }
 
 .results-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f3f4f6;
+  background-color: #c7c6c8;
   padding: 16px 20px;
   border-radius: 8px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
 }
 
 .results-count {

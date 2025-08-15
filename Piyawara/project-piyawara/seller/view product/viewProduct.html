@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Product</title>
+    <link rel="stylesheet" href="../../../style/seller_form.css" />
+    <!-- Add FontAwesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script src="../../../components/header-components/heder-tag.js"></script>
+    <script src="./controller.js"></script>
+  </head>
+  <body>
+    <heder-tag></heder-tag>
+
+    <div class="topic">Product Adding Form</div>
+    <div class="page-content">
+      <!-- side bar content -->
+      <div class="sidebar">
+        <div class="menu-item active" data-content="add-products">
+          <span class="icon"><i class="fas fa-box"></i></span>
+          <span>Add Products</span>
+          <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+        </div>
+        <div class="menu-item" data-content="view-products">
+          <span class="icon"><i class="fas fa-eye"></i></span>
+          <span>View Products</span>
+          <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+        </div>
+        <div class="menu-item" data-content="reports-earnings">
+          <span class="icon"><i class="fas fa-chart-bar"></i></span>
+          <span>Reports & Earnings</span>
+          <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+        </div>
+        <div class="menu-item" data-content="view-ratings-comments">
+          <span class="icon"><i class="fas fa-star"></i></span>
+          <span>View ratings & Comments</span>
+          <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+        </div>
+        <div class="menu-item" data-content="emails-inquiry">
+          <span class="icon"><i class="fas fa-envelope"></i></span>
+          <span>Emails & Inquiry</span>
+          <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+        </div>
+        <div class="menu-item" data-content="view-action">
+          <span class="icon"><i class="fas fa-eye"></i></span>
+          <span>View Action</span>
+          <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+        </div>
+      </div>
+
+      <div class="content-area">
+        <div class="content-box">
+          <div id="add-products" class="content-section active">Loading...</div>
+          <div id="view-products" class="content-section">B</div>
+          <div id="reports-earnings" class="content-section">C</div>
+          <div id="view-ratings-comments" class="content-section">D</div>
+          <div id="emails-inquiry" class="content-section">E</div>
+          <div id="view-action" class="content-section">F</div>
+        </div>
+      </div>
+    </div>
+    <footer-tag></footer-tag>
+
+    <script>
+      // Function to load HTML into a target element
+      function loadHTML(targetId, filePath) {
+        fetch(filePath)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(
+                `Could not load ${filePath}: ${response.statusText}`
+              );
+            }
+            return response.text();
+          })
+          .then((data) => {
+            document.getElementById(targetId).innerHTML = data;
+          })
+          .catch((error) => {
+            console.error(error);
+            document.getElementById(targetId).innerHTML =
+              "<p style='color:red;'>Error loading content</p>";
+          });
+      }
+
+      const sidebarItems = document.querySelectorAll(".menu-item");
+      const contentSections = document.querySelectorAll(".content-section");
+
+      // Sidebar click handler
+      sidebarItems.forEach((item) => {
+        item.addEventListener("click", function () {
+          // Remove active from all sidebar items
+          sidebarItems.forEach((i) => i.classList.remove("active"));
+          // Add active to clicked item
+          this.classList.add("active");
+
+          // Hide all content sections
+          contentSections.forEach((section) =>
+            section.classList.remove("active")
+          );
+
+          // Show the selected section
+          const targetContent = this.getAttribute("data-content");
+          const targetElement = document.getElementById(targetContent);
+          const clickedFile = `${targetContent}.html`;
+          if (targetElement) {
+            targetElement.classList.add("active");
+
+            // Load add-product.html when first time clicking "Add Products"
+            if (!targetElement.hasAttribute("data-loaded")) {
+              loadHTML(targetContent, clickedFile);
+              targetElement.setAttribute("data-loaded", "true");
+            }
+          }
+        });
+      });
+
+      // Load "Add Products" content by default on first page load
+      document.addEventListener("DOMContentLoaded", () => {
+        loadHTML(targetContent, clickedFile);
+        document
+          .getElementById(targetContent)
+          .setAttribute("data-loaded", "true");
+      });
+    </script>
+  </body>
+</html>
