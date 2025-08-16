@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Seller-dashboard</title>
+    </head>
+    <body>
+        <div>
+            <heder-tag></heder-tag>
+        </div>
+        <div><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard - Product Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header placeholder - your team will add the header component here -->
+    <header id="header-placeholder">
+        <!-- <header-tag></header-tag> or your header content -->
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="menu-item active">
+                <span class="icon"><i class="fas fa-box"></i></span>
+
+                <span>Add Products</span>
+                <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="menu-item">
+                <span class="icon"><i class="fas fa-eye"></i></span>
+                <span>View Products</span>
+                <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="menu-item">
+                <span class="icon"><i class="fas fa-chart-bar"></i></span>
+                <span>Reports & Earnings</span>
+                <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="menu-item">
+                <span class="icon"><i class="fas fa-star"></i></span>
+                <span>View ratings & Comments</span>
+                <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="menu-item">
+                <span class="icon"><i class="fas fa-envelope"></i></span>
+                <span>Emails & Inquiry</span>
+                <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="menu-item">
+                <span class="icon"><i class="fas fa-eye"></i></span>
+                <span>View Action</span>
+                <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Tab Navigation -->
+            <div class="tab-nav">
+                <div class="tab active">Add Product</div>
+                <div class="tab">Add Auction Item</div>
+                <div class="tab">Add Rental Item</div>
+            </div>
+
+            <div class="content-wrapper">
+                <!-- Form Container -->
+                <div class="form-container">
+                    <div id="product-form" class="form-content active">
+
+                    <!-- Basic Information -->
+                    <div class="form-section">
+                        <h3>Basic Information</h3>
+                        <div class="form-group">
+                            <label>Product name</label>
+                            <input type="text" id="productName" placeholder="">
+                            <div class="character-count" id="charCount">0/70</div>
+                        </div>
+                        <div class="form-group">
+                            <label>Product Category</label>
+                            <select>
+                                <option value="" disabled selected>Select Your Product Category</option>
+                                <option value="food">Food & Meals</option>
+                                <option value="fresh_food">Fresh Fruits,Vegetable and flowers</option>
+                                <option value="services">Creative crafts and Tailoring Items</option>
+                                <option value="herbals">Herbal & Medicinal Items</option>
+                                <option value="rent">Rental Items</option>               
+                            </select>
+                        </div>
+                    
+                        <!-- Product Images & Videos -->
+                        <h3>Product Images & Videos</h3>
+                        <p class="subtitle">Max size (Image Max: 2MB)</p>
+                        <div class="upload-area">
+                            <div class="upload-placeholder">
+                                <i class="fas fa-plus plus-icon"></i>
+                            </div>
+                        </div>
+                        <div class="character-count">0/5</div>
+                    
+                        <!-- Keywords -->
+                        <h3>Add Keyword Manually</h3>
+                        <p class="subtitle">Add some words to our website users understand it keywords relevant</p>
+                        <div class="keyword-input">
+                            <input type="text" id="keywordInput" placeholder="Add About Keywords">
+                            <button class="add-btn" onclick="addKeyword()">Add</button>
+                        </div>
+                        <div class="keyword-tags" id="keywordTags">
+                            <!-- Keywords will be added here dynamically -->
+                        </div>
+                   
+                        <!-- Description -->
+                        <h3>Description about Product</h3>
+                        <p class="subtitle">Product Description</p>
+                        <textarea id="description" placeholder="None" class="description-textarea"></textarea>
+                        <div class="character-count" id="descCharCount">0/255</div>
+                    </div>
+
+                    <!-- Product Specification -->
+                    <div class="form-section">
+                        <h3>Product specification</h3>
+                        <p class="subtitle">Fill information box based on income product opportunity</p>
+                        
+                        <div class="spec-row">
+                            <div class="spec-group">
+                                <label>Brand</label>
+                                <input type="text">
+                            </div>
+                            <div class="spec-group">
+                                <label>Expire date</label>
+                                <input type="date" placeholder="Add if Have">
+                            </div>
+                        </div>
+
+                        <div class="spec-row">
+                            <div class="spec-group">
+                                <label>Delivery Option</label>
+                                <div class="checkbox-container">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="delivery" value="partner">
+                                        Partner Delivery
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="delivery" value="collect">
+                                        Pick Up in Person
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="spec-group">
+                                <label>Unit Type</label>
+                                <select id="unit" name="unit" required>
+                                    <option value="" disabled selected>Select unit type</option>
+                                    <option value="kg">Kilograms (kg)</option>
+                                    <option value="L">Liters (L)</option>
+                                    <option value="m">Meters (m)</option>
+                                    <option value="items">items</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="spec-row">
+                            <div class="spec-group">
+                                <label>Package Type</label>
+                                <input type="text">
+                            </div>
+                            <div class="spec-group">
+                                <label>Weight</label>
+                                <input type="text" placeholder="KG">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Price & Stock -->
+                    <div class="form-section">
+                        <h3>Price & Stock</h3>
+                        <div class="price-row">
+                            <div class="price-group">
+                                <label>Unit Price</label>
+                                <input type="text" placeholder="LKR 00" class="price-input">
+                            </div>
+                            <div class="price-group">
+                                <label>Special Price</label>
+                                <input type="text" placeholder="LKR 00" class="price-input">
+                            </div>
+                            <div class="price-group">
+                                <label>Stock</label>
+                                <div class="stock-input">
+                                    <button class="stock-btn" onclick="decreaseStock()">-</button>
+                                    <input type="text" id="stockNumber" value="01" class="stock-number" readonly>
+                                    <button class="stock-btn" onclick="increaseStock()">+</button>
+                                </div>
+                            </div>
+                            <div class="price-group">
+                                <label>Product Code</label>
+                                <input type="text" value="46234e4C" class="code-input">
+                            </div>
+                        </div>
+                        <div class="payment-options">
+                            <label>Payment Options</label>
+                            <div class="checkbox-container">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="pay" value="cod">
+                                    Cash on Delivery
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="pay" value="card">
+                                    Credit / Debit Card
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="pay" value="bank">
+                                    Bank Transfer
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="form-section">
+                        <h3>Terms and Conditions</h3>
+                        <p class="terms-text">I confirm that the products I am listing complies with Framework terms and conditions, is legally owned by me, and contains accurate and truthful information.</p>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agree">
+                            <label for="agree">Agreed</label>
+                            <span class="checkmark"><i class="fas fa-check"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Submit Buttons -->
+                    <div class="form-section">
+                        <h3>Submit</h3>
+                        <div class="submit-buttons">
+                            <button class="submit-btn save">Save only</button>
+                            <button class="submit-btn publish">Publish</button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div id="auction-form" class="form-content hidden">
+                                            <!-- Basic Information -->
+                    <div class="form-section">
+                        <h3>Basic Information</h3>
+                        <div class="form-group">
+                            <label>Product name</label>
+                            <input type="text" id="productName" placeholder="">
+                            <div class="character-count" id="charCount">0/70</div>
+                        </div>
+                        <div class="form-group">
+                            <label>Product Category</label>
+                            <select>
+                                <option value="" disabled selected>Select Your Product Category</option>
+                                <option value="food">Food & Meals</option>
+                                <option value="fresh_food">Fresh Fruits,Vegetable and flowers</option>
+                                <option value="services">Creative crafts and Tailoring Items</option>
+                                <option value="herbals">Herbal & Medicinal Items</option>
+                                <option value="rent">Rental Items</option>               
+                            </select>
+                        </div>
+                    
+                        <!-- Product Images & Videos -->
+                        <h3>Product Images & Videos</h3>
+                        <p class="subtitle">Max size (Image Max: 2MB)</p>
+                        <div class="upload-area">
+                            <div class="upload-placeholder">
+                                <i class="fas fa-plus plus-icon"></i>
+                            </div>
+                        </div>
+                        <div class="character-count">0/5</div>
+                    
+                        <!-- Keywords -->
+                        <h3>Add Keyword Manually</h3>
+                        <p class="subtitle">Add some words to our website users understand it keywords relevant</p>
+                        <div class="keyword-input">
+                            <input type="text" id="keywordInput" placeholder="Add About Furniture Keyword">
+                            <button class="add-btn" onclick="addKeyword()">Add</button>
+                        </div>
+                        <div class="keyword-tags" id="keywordTags">
+                            <!-- Keywords will be added here dynamically -->
+                        </div>
+                   
+                        <!-- Description -->
+                        <h3>Description about Product</h3>
+                        <p class="subtitle">Product Description</p>
+                        <textarea id="description" placeholder="None" class="description-textarea"></textarea>
+                        <div class="character-count" id="descCharCount">0/255</div>
+                    </div>
+
+                    <!-- Product Specification -->
+                    <div class="form-section">
+                        <h3>Product specification</h3>
+                        <p class="subtitle">Fill information box based on income product opportunity</p>
+                        
+                        <div class="spec-row">
+                            <div class="spec-group">
+                                <label>Owner</label>
+                                <input type="text">
+                            </div>
+                            <div class="spec-group">
+                                <label>End date</label>
+                                <input type="date" placeholder="Add if Have">
+                            </div>
+                        </div>
+
+                        <div class="spec-row">
+                            <div class="spec-group">
+                                <label>Tree Type</label>
+                                <select id="unit" name="unit" required>
+                                    <option value="" disabled selected>Select tree type</option>
+                                    <option value="kg">Fruit-Bearing Tree(s)</option>
+                                    <option value="L">Medicinal / Herbal Tree(s)</option>
+                                    <option value="m">Timber / Commercial Tree(s)</option>
+                                    <option value="items">Spice tree(s)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="spec-row">
+                            <div class="spec-group">
+                                <label>District</label>
+                                <input type="text">
+                            </div>
+                            <div class="spec-group">
+                                <label>Town</label>
+                                <input type="text" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Price & Stock -->
+                    <div class="form-section">
+                        <h3>Price & Stock</h3>
+                        <div class="price-row">
+                            <div class="price-group">
+                                <label>Starting Price</label>
+                                <input type="text" placeholder="LKR 00" class="price-input">
+                            </div>
+                            
+                            <div class="price-group">
+                                <label>Stock</label>
+                                <div class="stock-input">
+                                    <button class="stock-btn" onclick="decreaseStock()">-</button>
+                                    <input type="text" id="stockNumber" value="01" class="stock-number" readonly>
+                                    <button class="stock-btn" onclick="increaseStock()">+</button>
+                                </div>
+                            </div>
+                            <div class="price-group">
+                                <label>Product Code</label>
+                                <input type="text" value="46234e4C" class="code-input">
+                            </div>
+                        </div>
+                        <div class="payment-options">
+                            <label>Payment Options</label>
+                            <div class="checkbox-container">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="pay" value="cod">
+                                     Manual Payment
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="pay" value="card">
+                                    Credit / Debit Card
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="pay" value="bank">
+                                    Bank Transfer
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="form-section">
+                        <h3>Terms and Conditions</h3>
+                        <p class="terms-text">I confirm that the products I am listing complies with Framework terms and conditions, is legally owned by me, and contains accurate and truthful information.</p>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agree">
+                            <label for="agree">Agreed</label>
+                            <span class="checkmark"><i class="fas fa-check"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Submit Buttons -->
+                    <div class="form-section">
+                        <h3>Submit</h3>
+                        <div class="submit-buttons">
+                            <button class="submit-btn save">Save only</button>
+                            <button class="submit-btn publish">Publish</button>
+                        </div>
+                    </div>
+        
+                    </div>
+
+
+
+                    <div id="rental-form" class="form-content hidden">
+                        <!-- Basic Information -->
+                    <div class="form-section">
+                        <h3>Basic Information</h3>
+                        <div class="form-group">
+                            <label>Product name</label>
+                            <input type="text" id="productName" placeholder="">
+                            <div class="character-count" id="charCount">0/70</div>
+                        </div>
+                        <div class="form-group">
+                            <label>Product Category</label>
+                            <select>
+                                <option value="" disabled selected>Select Your Product Category</option>
+                                <option value="food">Food & Meals</option>
+                                <option value="fresh_food">Fresh Fruits,Vegetable and flowers</option>
+                                <option value="services">Creative crafts and Tailoring Items</option>
+                                <option value="herbals">Herbal & Medicinal Items</option>
+                                <option value="rent">Rental Items</option>               
+                            </select>
+                        </div>
+                    
+                        <!-- Product Images & Videos -->
+                        <h3>Product Images & Videos</h3>
+                        <p class="subtitle">Max size (Image Max: 2MB)</p>
+                        <div class="upload-area">
+                            <div class="upload-placeholder">
+                                <i class="fas fa-plus plus-icon"></i>
+                            </div>
+                        </div>
+                        <div class="character-count">0/5</div>
+                    
+                        <!-- Keywords -->
+                        <h3>Add Keyword Manually</h3>
+                        <p class="subtitle">Add some words to our website users understand it keywords relevant</p>
+                        <div class="keyword-input">
+                            <input type="text" id="keywordInput" placeholder="Add About Keywords">
+                            <button class="add-btn" onclick="addKeyword()">Add</button>
+                        </div>
+                        <div class="keyword-tags" id="keywordTags">
+                            <!-- Keywords will be added here dynamically -->
+                        </div>
+                   
+                        <!-- Description -->
+                        <h3>Description about Product</h3>
+                        <p class="subtitle">Product Description</p>
+                        <textarea id="description" placeholder="None" class="description-textarea"></textarea>
+                        <div class="character-count" id="descCharCount">0/255</div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Product specification</h3>
+                        <p class="subtitle">Fill information for rental product listing</p>
+                        
+                        <div class="spec-row">
+                            <div class="spec-group">
+                                <label>Brand/Manufacturer</label>
+                                <input type="text" placeholder="Enter brand name">
+                            </div>
+                            
+                            <div class="spec-group">
+                                <label>Rental Periods</label>
+                                <div class="checkbox-container">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="rental_period" value="monthly">
+                                        One month
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="rental_period" value="weekly">
+                                        One week
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="rental_period" value="daily">
+                                        One day
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="rental_period" value="hourly">
+                                        Hourly
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="spec-row">
+                            <div class="spec-group">
+                                <label>Owner Information</label>
+                                <input type="text" placeholder="Owner name">
+                            </div>
+                            <div class="spec-group">
+                                <label>City</label>
+                                <select id="city" name="city" required>
+                                    <option value="" disabled selected>Select your city</option>
+                                    <option value="colombo">Colombo</option>
+                                    <option value="kandy">Kandy</option>
+                                    <option value="galle">Galle</option>
+                                    <option value="jaffna">Jaffna</option>
+                                    <option value="negombo">Negombo</option>
+                                    <option value="anuradhapura">Anuradhapura</option>
+                                    <option value="trincomalee">Trincomalee</option>
+                                    <option value="batticaloa">Batticaloa</option>
+                                    <option value="matara">Matara</option>
+                                    <option value="kurunegala">Kurunegala</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="spec-row">
+                            <div class="spec-group">
+                                <label>District</label>
+                                <select id="district" name="district" required>
+                                    <option value="" disabled selected>Select your district</option>
+                                    <option value="colombo">Colombo</option>
+                                    <option value="kandy">Kandy</option>
+                                    <option value="galle">Galle</option>
+                                    <option value="jaffna">Jaffna</option>
+                                    <option value="gampaha">Gampaha</option>
+                                    <option value="kalutara">Kalutara</option>
+                                    <option value="anuradhapura">Anuradhapura</option>
+                                    <option value="polonnaruwa">Polonnaruwa</option>
+                                    <option value="matale">Matale</option>
+                                    <option value="nuwara_eliya">Nuwara Eliya</option>
+                                    <option value="kegalle">Kegalle</option>
+                                    <option value="ratnapura">Ratnapura</option>
+                                    <option value="trincomalee">Trincomalee</option>
+                                    <option value="batticaloa">Batticaloa</option>
+                                    <option value="ampara">Ampara</option>
+                                    <option value="badulla">Badulla</option>
+                                    <option value="monaragala">Monaragala</option>
+                                    <option value="hambantota">Hambantota</option>
+                                    <option value="matara">Matara</option>
+                                    <option value="kurunegala">Kurunegala</option>
+                                    <option value="puttalam">Puttalam</option>
+                                    <option value="vavuniya">Vavuniya</option>
+                                    <option value="mannar">Mannar</option>
+                                    <option value="kilinochchi">Kilinochchi</option>
+                                    <option value="mullaitivu">Mullaitivu</option>
+                                </select>
+                            </div>
+                            <div class="spec-group">
+                                <label>Condition</label>
+                                <select id="condition" name="condition" required>
+                                    <option value="" disabled selected>Select item condition</option>
+                                    <option value="excellent">Excellent</option>
+                                    <option value="very_good">Very Good</option>
+                                    <option value="good">Good</option>
+                                    <option value="fair">Fair</option>
+                                    <option value="needs_repair">Needs Minor Repair</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="spec-row">
+                            <div class="spec-group">
+                                <label>Delivery Option</label>
+                                <div class="checkbox-container">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="delivery" value="owner_delivery">
+                                        Owner Delivery
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="delivery" value="pickup">
+                                        Pick Up from Location
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="delivery" value="both">
+                                        Both Options Available
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="spec-group">
+                                <label>Security Deposit Required</label>
+                                <select id="deposit" name="deposit" required>
+                                    <option value="" disabled selected>Security deposit</option>
+                                    <option value="yes">Yes, Required</option>
+                                    <option value="no">No Deposit</option>
+                                    <option value="negotiable">Negotiable</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="spec-row">
+                            <div class="spec-group">
+                                <label>Package Type</label>
+                                <input type="text" placeholder="Original box, protective case, etc.">
+                            </div>
+                            <div class="spec-group">
+                                <label>Weight</label>
+                                <input type="text" placeholder="KG">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Price & Stock -->
+                    <div class="form-section">
+                        <h3>Rental Pricing & Availability</h3>
+                        <div class="price-row">
+                            <div class="price-group">
+                                <label>Daily Rate</label>
+                                <input type="text" placeholder="LKR 00 per day" class="price-input">
+                            </div>
+                            <div class="price-group">
+                                <label>Weekly Rate</label>
+                                <input type="text" placeholder="LKR 00 per week" class="price-input">
+                            </div>
+                            <div class="price-group">
+                                <label>Monthly Rate</label>
+                                <input type="text" placeholder="LKR 00 per month" class="price-input">
+                            </div>
+                            <div class="price-group">
+                                <label>Security Deposit</label>
+                                <input type="text" placeholder="LKR 00" class="price-input">
+                            </div>
+                        </div>
+                        
+                        <div class="price-row">
+                            <div class="price-group">
+                                <label>Available Quantity</label>
+                                <div class="stock-input">
+                                    <button class="stock-btn" onclick="decreaseStock()">-</button>
+                                    <input type="text" id="stockNumber" value="01" class="stock-number" readonly>
+                                    <button class="stock-btn" onclick="increaseStock()">+</button>
+                                </div>
+                            </div>
+                            <div class="price-group">
+                                <label>Product Code</label>
+                                <input type="text" value="RNT46234e4C" class="code-input">
+                            </div>
+                            <div class="spec-group">
+                                <label>Minimum Rental Period</label>
+                                <select id="min_period" name="min_period" required>
+                                    <option value="" disabled selected>Select minimum period</option>
+                                    <option value="1_hour">1 Hour</option>
+                                    <option value="4_hours">4 Hours</option>
+                                    <option value="1_day">1 Day</option>
+                                    <option value="3_days">3 Days</option>
+                                    <option value="1_week">1 Week</option>
+                                    <option value="1_month">1 Month</option>
+                                </select>
+                            </div>
+                            <div class="spec-group">
+                                <label>Maximum Rental Period</label>
+                                <select id="max_period" name="max_period" required>
+                                    <option value="" disabled selected>Select maximum period</option>
+                                    <option value="1_week">1 Week</option>
+                                    <option value="1_month">1 Month</option>
+                                    <option value="3_months">3 Months</option>
+                                    <option value="6_months">6 Months</option>
+                                    <option value="1_year">1 Year</option>
+                                    <option value="no_limit">No Limit</option>
+                                </select>
+                            </div>
+                        </div>
+    
+    <div class="payment-options">
+        <label>Payment Options</label>
+        <div class="checkbox-container">
+            <label class="checkbox-label">
+                <input type="checkbox" name="pay" value="advance">
+                Advance Payment (Full Amount)
+            </label>
+            <label class="checkbox-label">
+                <input type="checkbox" name="pay" value="partial">
+                Partial Payment + Deposit
+            </label>
+            <label class="checkbox-label">
+                <input type="checkbox" name="pay" value="card">
+                Credit / Debit Card
+            </label>
+            <label class="checkbox-label">
+                <input type="checkbox" name="pay" value="bank">
+                Bank Transfer
+            </label>
+            <label class="checkbox-label">
+                <input type="checkbox" name="pay" value="cash">
+                Cash Payment
+            </label>
+        </div>
+    </div>
+</div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="form-section">
+                        <h3>Terms and Conditions</h3>
+                        <p class="terms-text">I confirm that the products I am listing complies with Framework terms and conditions, is legally owned by me, and contains accurate and truthful information.</p>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agree">
+                            <label for="agree">Agreed</label>
+                            <span class="checkmark"><i class="fas fa-check"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Submit Buttons -->
+                    <div class="form-section">
+                        <h3>Submit</h3>
+                        <div class="submit-buttons">
+                            <button class="submit-btn save">Save only</button>
+                            <button class="submit-btn publish">Publish</button>
+                        </div>
+                    </div>
+                </div>
+        
+                    
+                </div>
+
+                <!-- Right Sidebar -->
+                <div class="right-sidebar">
+                    <div class="step active">
+                        <span class="step-number">1</span>
+                        <span>Basic Information</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <span>Product specification</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <span>Price & Stock</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <span>Terms and Conditions</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">5</span>
+                        <span>Submit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer placeholder - your team will add the footer component here -->
+    <footer id="footer-placeholder">
+        <!-- Footer content will go here -->
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- <script src="../components/header-components/heder-tag.js"></script> -->
+</body>
+</html></div>
+        <div></div>
+
+
+
+        <script src="../components/header-components/heder-tag.js"></script>
+    </body>
+</html>
