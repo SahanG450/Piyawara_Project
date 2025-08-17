@@ -1,0 +1,198 @@
+// components/filterbar-tag.js
+
+class filterTag extends HTMLElement {
+  connectedCallback() {
+    const fileName = "../../style/sideFilterbar.css";
+
+    this.innerHTML = `
+
+     <nav class="filter-sidebar">
+     <link rel="stylesheet" href="${fileName}" />
+  <!-- Price Filter Section -->
+  <div class="filter-section">
+    <h3 class="filter-title">Widget  price filter</h3>
+
+    <div class="price-inputs">
+      <input
+        type="number"
+        class="price-input"
+        id="minPrice"
+        value="0"
+        placeholder="Min price"
+      />
+      <span class="price-separator">-</span>
+      <input
+        type="number"
+        class="price-input"
+        id="maxPrice"
+        value="30"
+        placeholder="Max price"
+      />
+    </div>
+
+    <div class="price-range-container">
+      <input
+        type="range"
+        class="price-slider"
+        id="priceRange"
+        min="0"
+        max="100"
+        value="30"
+      />
+    </div>
+
+    <div class="price-display">
+      <span class="price-text">Price: Rs.0 — Rs.30</span>
+      <button class="filter-button">Filter</button>
+    </div>
+  </div>
+
+  <!-- Product Categories Section -->
+  <div class="filter-section">
+    <h3 class="filter-title">Product Categories</h3>
+
+    <ul class="category-list">
+      <li class="category-item">
+        <label class="category-checkbox">
+          <div class="checkbox checked"></div>
+          <span class="category-label">Food and Meals</span>
+        </label>
+        <button class="expand-button">+</button>
+      </li>
+
+      <li class="category-item">
+        <label class="category-checkbox">
+          <div class="checkbox"></div>
+          <span class="category-label">Herbal and Medicine</span>
+        </label>
+      </li>
+
+      <li class="category-item">
+        <label class="category-checkbox">
+          <div class="checkbox"></div>
+          <span class="category-label">Grains and Rice</span>
+        </label>
+        <button class="expand-button">+</button>
+      </li>
+
+      <li class="category-item">
+        <label class="category-checkbox">
+          <div class="checkbox"></div>
+          <span class="category-label">Tailoring Items</span>
+        </label>
+        <button class="expand-button">+</button>
+      </li>
+
+      <li class="category-item">
+        <label class="category-checkbox">
+          <div class="checkbox"></div>
+          <span class="category-label">Hand Crafts</span>
+        </label>
+      </li>
+
+      <li class="category-item">
+        <label class="category-checkbox">
+          <div class="checkbox"></div>
+          <span class="category-label">Flowers and Plants</span>
+        </label>
+        <button class="expand-button">+</button>
+      </li>
+
+      <li class="category-item">
+        <label class="category-checkbox">
+          <div class="checkbox"></div>
+          <span class="category-label">Catering and food Service</span>
+        </label>
+        <button class="expand-button">+</button>
+      </li>
+
+      <li class="category-item">
+        <label class="category-checkbox">
+          <div class="checkbox"></div>
+          <span class="category-label">Fruits and Vegetables</span>
+        </label>
+      </li>
+
+      <li class="category-item">
+        <label class="category-checkbox">
+          <div class="checkbox"></div>
+          <span class="category-label">Trees Rentals</span>
+        </label>
+      </li>
+
+      <li class="category-item">
+        <label class="category-checkbox">
+          <div class="checkbox"></div>
+          <span class="category-label">Renting Items</span>
+        </label>
+      </li>
+
+      <li class="category-item">
+        <label class="category-checkbox">
+          <div class="checkbox"></div>
+          <span class="category-label">Auction Items</span>
+        </label>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Filter by Location Section -->
+  <div class="filter-section">
+    <h3 class="filter-title">Filter by Location</h3>
+    <select class="location-select">
+      <option value="">Select Your City</option>
+      <option value="colombo">Colombo</option>
+      <option value="gampaha">Gampaha</option>
+      <option value="kalutara">Kalutara</option>
+      <option value="kandy">Kandy</option>
+      <option value="matale">Matale</option>
+      <option value="nuwara-eliya">Nuwara Eliya</option>
+      <option value="galle">Galle</option>
+      <option value="matara">Matara</option>
+      <option value="hambantota">Hambantota</option>
+      <option value="jaffna">Jaffna</option>
+      <option value="kilinochchi">Kilinochchi</option>
+      <option value="mannar">Mannar</option>
+      <option value="vavuniya">Vavuniya</option>
+      <option value="mullaitivu">Mullaitivu</option>
+      <option value="batticaloa">Batticaloa</option>
+      <option value="ampara">Ampara</option>
+      <option value="trincomalee">Trincomalee</option>
+      <option value="kurunegala">Kurunegala</option>
+      <option value="puttalam">Puttalam</option>
+      <option value="anuradhapura">Anuradhapura</option>
+      <option value="polonnaruwa">Polonnaruwa</option>
+      <option value="badulla">Badulla</option>
+      <option value="moneragala">Moneragala</option>
+      <option value="ratnapura">Ratnapura</option>
+      <option value="kegalle">Kegalle</option>
+    </select>
+  </div>
+
+  <!-- Filter by Brands Section -->
+  <div class="filter-section">
+    <h3 class="filter-title">Filter by Brands</h3>
+
+    <div class="brand-item">
+      <label class="brand-checkbox">
+        <div class="checkbox"></div>
+        <span class="category-label">Fresh</span>
+      </label>
+      <span class="brand-count">(1)</span>
+    </div>
+
+    <div class="brand-item">
+      <label class="brand-checkbox">
+        <div class="checkbox"></div>
+        <span class="category-label">Used</span>
+      </label>
+      <span class="brand-count">(1)</span>
+    </div>
+  </div>
+</nav>
+
+`;
+  }
+}
+
+customElements.define("filterbar-tag", filterTag);

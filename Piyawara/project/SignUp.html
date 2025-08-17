@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../style/login-regester/SignUp.css">
+    <script src="../components/header-components/heder-tag.js"></script>
+    <script src="../components/breadcrump/bread-tag.js"></script>
+</head>
+<body>
+    <heder-tag></heder-tag>
+    <bread-tag></bread-tag>
+    <div class="container">
+        <div class="form-box">
+            <div class="tab">
+                <h1 class="tab login-tab">Login</h1>
+                <h1 class="tab register-tab">Register</h1>
+            </div>
+            <div class="instruction">Join us. Make a <b>Difference</b>. </div>
+            <form>
+            <div class="raw">    
+                <div class="input-box">
+                    <input type="text" required>
+                    <label>First Name*<label>
+                </div>
+                    <div class="input-box">
+                    <input type="text" required>
+                    <label>Last Name*<label>
+                </div>
+            </div>
+            <div class="raw">    
+                <div class="input-box">
+                    <input type="email" required>
+                    <label>Email Address*<label>
+                </div>
+                    <div class="input-box">
+                    <input type="tel" maxlength="10" required>
+                    <label>Phone Number*<label>
+                </div>
+            </div>
+            <div class="raw">
+                <div class="input-box">
+                <input type="text" required>
+                <label>Address Line*</label>
+                </div>
+            </div>
+            <div class="raw">    
+                <div class="input-box">
+                    <input type="text" required>
+                    <label>City / Town*<label>
+                </div>
+                    <div class="input-box">
+                    <input type="text" maxlength="10" required>
+                    <label>District / Province*<label>
+                </div>
+            </div>
+            <div class="raw">    
+                <div class="input-box">
+                    <input type="password" required>
+                    <label>Password*<label>
+                </div>
+                <div class="input-box">
+                    <input type="password" maxlength="10" required>
+                    <label>Confirm Password*<label>
+                </div>
+            </div>
+            <div class="input-radio-group">
+                <label class="radio-label">Select role*</label>
+                    <div class="radio-options">
+                        <label class="radio-option">
+                            <input type="radio" name="role" value="buyer" required>
+                            <span class="radio-custom"></span>
+                            Buyer
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="role" value="seller">
+                            <span class="radio-custom"></span>
+                            Seller
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="role" value="both">
+                            <span class="radio-custom"></span>
+                            Both
+                        </label>
+                    </div>
+            </div>
+            <p ID="DP">Upload Profile Image(optional)</p>
+            <div class="image-container">
+                <div class="image-upload-box">
+                    <input type="file" id="profile-image" accept="image/jpeg, image/png" class="upload-input">
+                    <label for="profile-image" class="upload-label">
+                        <div class="upload-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6"><path fill-rule="evenodd" d="M11.47 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06l-3.22-3.22V16.5a.75.75 0 0 1-1.5 0V4.81L8.03 8.03a.75.75 0 0 1-1.06-1.06l4.5-4.5ZM3 15.75a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" /></svg>
+                            <!-- <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg> -->
+                        </div>
+                        <div class="upload-text">
+                            <p>Choose a photo or drag & drop it here</p>
+                            <span>Max 5MB, JPG/PNG</span>
+                        </div>
+                    </label>
+                        <div class="preview-container hidden">
+                            <img id="image-preview" src="#" alt="Preview">
+                                <button class="delete-btn" type="button">
+                                    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                                </button>
+                        </div>
+                </div>
+            </div>
+            <div class="raw">
+                    <div class="terms-container">
+                        <input type="checkbox" id="agree-terms" class="terms-checkbox">
+                        <label for="agree-terms" class="terms-label">
+                            By creating an account, I agree to our <a href="#">Terms of use</a> and <a href="#">Privacy Policy</a>
+                        </label>
+                    </div>
+            </div>
+            <button type="submit" class="create-account">Create Account</button>
+            </form>
+        </div>
+    </div>
+    <script>
+            const uploadInput = document.querySelector('.upload-input');
+            const previewContainer = document.querySelector('.preview-container');
+            const imagePreview = document.getElementById('image-preview');
+            const deleteBtn = document.querySelector('.delete-btn');
+
+            uploadInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                // Check file size (5MB max)
+                if (file.size > 5 * 1024 * 1024) {
+                alert('File size exceeds 5MB limit');
+                return;
+                }
+                
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                imagePreview.src = event.target.result;
+                previewContainer.classList.remove('hidden');
+                }
+                reader.readAsDataURL(file);
+            }
+            });
+
+            deleteBtn.addEventListener('click', function() {
+            uploadInput.value = '';
+            imagePreview.src = '#';
+            previewContainer.classList.add('hidden');
+            });
+
+            // Drag and drop functionality
+            const uploadBox = document.querySelector('.image-upload-box');
+
+            uploadBox.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadBox.style.borderColor = '#111827';
+            uploadBox.style.backgroundColor = 'rgba(0,0,0,0.05)';
+            });
+
+            uploadBox.addEventListener('dragleave', () => {
+            uploadBox.style.borderColor = '#9CA3AF';
+            uploadBox.style.backgroundColor = 'transparent';
+            });
+
+            uploadBox.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadBox.style.borderColor = '#9CA3AF';
+            uploadBox.style.backgroundColor = 'transparent';
+            
+            if (e.dataTransfer.files.length) {
+                uploadInput.files = e.dataTransfer.files;
+                const event = new Event('change');
+                uploadInput.dispatchEvent(event);
+            }
+            });
+    </script>
+</body>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign In</title>
+    <link rel="stylesheet" href="../style/login-regester/SignIn.css">
+    <script src="../components/header-components/heder-tag.js"></script>
+    <script src="../components/breadcrump/bread-tag.js"></script>
+</head>
+<body>
+    <header>
+        <heder-tag></heder-tag>
+        <bread-tag></bread-tag>
+    </header>
+     
+    <div class="container">
+        <div class="form-box">
+            <div class="tab">
+                <h1 class="tab login-tab">Login</h1>
+                <h1 class="tab register-tab">Register</h1>
+            </div>
+            <div class="instruction">If you have an account, sign in with your username or email address.</div>
+            <form>
+                <div class="input-box">
+                    <input type="email" required>
+                    <label>Username</label>
+                </div>
+                    <div class="input-box">
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="log">Log In</button> 
+                <div class="signin-text">
+                Don't have an account? <a href="#" class="signin-link">Sign Up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

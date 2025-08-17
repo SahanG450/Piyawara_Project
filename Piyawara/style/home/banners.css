@@ -1,0 +1,145 @@
+.web-banner{
+    display: flex;
+    height: 70%;
+    width: 70%;
+    margin-left: -70px;
+}
+
+.web-banner-shop{
+    display: flex;
+    height: auto;
+    margin-left: 0;
+    margin-top: 45px;
+    width: 100%;
+}
+
+.web-banner-rent{
+    display: flex;
+    height: auto;
+    margin-left: 0;
+    margin-top: 45px;
+    width: 100%;
+}
+
+.banner-sell-skill {
+    backdrop-filter: blur(6px);
+    background: url("../../assets/banner-skill.png") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin-top: 45px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sell-skill-content {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.sell-skill-content > div {
+    flex: 1 ;
+    min-width: 150px;
+    max-width: 200px;
+    align-items: center;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 20px;
+    font-family: "Inter", sans-serif;
+    border: rgba(134, 66, 193, 1) 3px solid;
+    color: rgba(134, 66, 193, 1);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.6);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    box-shadow: 9px 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sell-skill-content > div:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.banner-sell-skill-content {
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    min-height: 200px;
+    height: auto;
+    overflow: hidden;
+    width: 20%;
+}
+
+.banner-sell-skill-img {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: black;
+    border-radius: 20px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 400px;
+}
+
+.banner-sell-skill-content1 {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+}
+
+.banner-sell-skill-content2 {
+    margin: 10px 50px;
+    font-size: 25px;
+    font-family: Bahnschrift, sans-serif;
+}
+
+.btn-sell-skill {
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    width: 60%;
+    height: 35px;
+    background-color: rgba(23, 80, 48 ,0.9);
+    color: white;
+    transition: 0.2s;
+}
+
+.btn-sell-skill:hover {
+    background-color: transparent;
+    color: rgba(23, 80, 48 ,0.9);
+    border: 2px solid rgba(23, 80, 48 ,0.9);
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .sell-skill-content > div {
+        flex: 1 1 calc(33.33% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .sell-skill-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .sell-skill-content > div {
+        flex: 1 1 90%;
+    }
+}
+
+@media (max-width: 400px) {
+    .banner-sell-skill-img{
+        transform: scale(0.8);
+    }
+}
+
