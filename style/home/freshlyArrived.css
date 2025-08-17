@@ -1,0 +1,245 @@
+
+.freshlyArrived-title-box{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    margin-left: 0;
+    margin-right:0;
+}
+
+.freshlyArrived-title-box > div > button{
+    background-color: transparent;
+    font-family: "Inter", sans-serif;
+    font-weight: bolder;
+    font-size: 16px;
+    border: rgba(134, 66, 193, 1) solid 2px;
+    border-radius: 10px;
+    color: rgba(134, 66, 193, 1);
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+    margin-top: -12px;
+    transition: transform 0.4s;
+}
+
+.freshlyArrived-title-box > div > button:hover{
+    background-color: rgba(134, 66, 193, 0.1) ;
+    transition: transform 0.4s;
+}
+
+.freshlyArrived-title{
+    display: flex;
+    margin-bottom: 40px;
+    font-size: 24px;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    color: rgba(99,76,159,1);
+}
+
+.freshlyArrived-content-box{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ad-box {
+    display: flex;
+    flex-direction: column;
+    margin-left: 7.5px;
+    margin-right:7.5px;
+    height: 360px;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    transform: perspective(1800px);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.4s ease;
+}
+
+.ad-box:hover {
+    transform: perspective(1800px) scale(1.05) translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.freshlyArrived{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100vw;
+    margin:0;
+}
+
+.ad-image{
+    display: flex;
+    flex-grow: 2;
+    padding-top: 10px;
+}
+
+.ad-image > img{
+    width: 100%;
+    height: 80%;
+    border-radius: 20%;
+    object-fit: cover;
+}
+
+.ad-detail{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    margin-top: -30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    flex-grow: 3;
+}
+
+.ad-buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 0.9;
+  flex-direction: row;
+}
+
+.ad-option{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.ad-option-img{
+    width: 26px;
+    height: 26px;
+    margin-right: 10px;
+
+}
+
+.product-name{
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.producer-name{
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.discount{
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: white;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgba(26,186,26,1);
+}
+
+.btn-buy-ad{
+    height: 60%;
+    width:80%;
+    background-color: rgba(112,244,121,0.53);
+    font-family: "Istok Web", sans-serif;
+    font-weight: bold;
+    border: none;
+    font-size: 100%;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.btn-veiw-ad{
+    height: 60%;
+    width:80%;
+    background-color: rgba(164,143,255,0.53);
+    font-family: "Istok Web", sans-serif;
+    font-weight: bolder;
+    border: none;
+    border-radius: 5px;
+    font-size: 100%;
+}
+
+.old-price{
+    color: rgb(102,102,102);
+    font-size: 12px;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    text-decoration: line-through;
+    margin-left: 5px;
+}
+
+.current-price {
+    color: rgb(241, 53, 43);
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+}
+
+.category-ad-option{
+    margin-left: -40px;
+}
+
+@media (max-width: 1120px) {
+    .adTag4{
+       display: none;
+    }
+}
+
+@media (max-width: 880px) {
+    .adTag3{
+        display: none;
+    }
+}
+
+@media (max-width: 680px) {
+    .ad-box{
+        width: auto;
+    }
+}
+@media (max-width: 610px) {
+   .freshlyArrived-content-box {
+       flex-direction: column;
+   }
+
+   .ad-box{
+       width: 200px;
+       margin-bottom: 20px;
+   }
+
+    .adTag3{
+        display: flex;
+    }
+
+
+}
+
+@media (max-width: 400px) {
+    .freshlyArrived-title-box{
+        transform: scale(0.85);
+        margin-top: -20px;
+    }
+
+    .freshlyArrived-content-box{
+        transform: scale(0.85);
+        margin-top: -70px;
+
+    }
+}
+
+
+
+

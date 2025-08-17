@@ -1,0 +1,58 @@
+/* Base Styles (Mobile First) */
+.breadcrumb-container {
+  padding: 15px 20px;
+  background-color: #fafafa;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.breadcrumb {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.breadcrumb a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  margin: 0 8px;
+  color: #6c757d;
+  font-weight: bold;
+}
+
+.breadcrumb-current {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* Tablet and up (>= 769px) */
+@media screen and (min-width: 769px) {
+  .breadcrumb-container {
+    padding: 15px 72px;
+  }
+
+  .breadcrumb {
+    padding: 36px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Optional: Hide completely on very small screens (if needed) */
+@media screen and (max-width: 480px) {
+  .breadcrumb-container {
+    display: none;
+  }
+}

@@ -1,0 +1,41 @@
+.why-use-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+.why-use-tittle{
+    display: flex;
+    justify-content: center;
+}
+
+.why-use-content > div> div > img{
+    width: 100px;
+    height: 100px;
+}
+
+.why-use-content > div{
+    margin: 10px;
+    flex: 1;
+}
+
+.tree-rental-img > img{
+    height: 100%;
+    width: 100%;
+    margin-top: 40px;
+    margin-left: -1px;
+}
+
+@media (max-width: 1126px) {
+    .why-use-content{
+        justify-content: space-evenly;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}
